@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  asset_db:
+    image: postgres:15-alpine
+    container_name: asset_governance_db
+    restart: always
+    environment:
+      POSTGRES_USER: admin_user
+      POSTGRES_PASSWORD: SecurePassword123!
+      POSTGRES_DB: EnterpriseAssetDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database:/docker-entrypoint-initdb.d
+
+volumes:
+  postgres_data:
