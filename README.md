@@ -17,3 +17,11 @@ Attempting to insert a child asset referencing a non-existent location ID instan
 ```sql
 ERROR: insert or update on table "assets" violates foreign key constraint "assets_location_id_fkey"
 DETAIL: Key (location_id)=(1) is not present in table "locations".
+ERROR: insert or update on table "assets" violates foreign key constraint "assets_location_id_fkey"
+DETAIL: Key (location_id)=(1) is not present in table "locations".
+
+SELECT * FROM audit_logs;
+log_id | asset_id |                        action_type                        | changed_by |         timestamp          
+--------+----------+-----------------------------------------------------------+------------+----------------------------
+      1 |        2 | STATUS_CHANGE: OPERATIONAL -> MAINTENANCE                 | admin_user | 2026-08-10 02:20:34.300058
+
