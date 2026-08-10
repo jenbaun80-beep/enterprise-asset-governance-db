@@ -25,10 +25,3 @@ log_id | asset_id |                        action_type                        | 
 --------+----------+-----------------------------------------------------------+------------+----------------------------
       1 |        2 | STATUS_CHANGE: OPERATIONAL -> MAINTENANCE                 | admin_user | 2026-08-10 02:20:34.300058
 
-## Project Visualization & Dashboard
-![Mock Supply Stock Visualization](docs/mock_supply_stock.png)
-
-## Dataset & Raw Logs
-You can inspect the raw and cleaned data files used in this project:
-- [View Raw Supply Data (CSV)](data/mock_supply_raw.csv)
-- [View Cleaned Audit-Ready Data (CSV)](data/mock_supply_cleaned.csv)
