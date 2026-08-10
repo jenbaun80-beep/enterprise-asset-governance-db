@@ -1,19 +1,20 @@
 version: '3.8'
 
 services:
-  asset_db:
-    image: postgres:15-alpine
-    container_name: asset_governance_db
-    restart: always
+  db:
+    image: postgres:16-alpine
+    container_name: enterprise-asset-db
     environment:
-      POSTGRES_USER: admin_user
-      POSTGRES_PASSWORD: SecurePassword123!
-      POSTGRES_DB: EnterpriseAssetDB
+      POSTGRES_DB: governance_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
+      # Automatically run SQL scripts in alphabetical/numerical order on first boot
       - ./database:/docker-entrypoint-initdb.d
+    restart: unless-stopped
 
 volumes:
-  postgres_data:
+  pgdata:
