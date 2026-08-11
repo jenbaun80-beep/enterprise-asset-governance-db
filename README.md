@@ -10,6 +10,19 @@ An enterprise-grade relational database architecture engineered for strict regul
 
 ---
 
+## 🔄 End-to-End Workflow Architecture
+
+```mermaid
+graph TD
+    A[Docker Compose Up] -->|Initializes Container| B[PostgreSQL Database]
+    B -->|Executes Scripts| C[/docker-entrypoint-initdb.d/]
+    C -->|Builds Schema & Tables| D[Strict 3NF Relational Schema]
+    D -->|Enforces Constraints| E[Foreign Keys & Audit Triggers]
+    E -->|Captures State Changes| F[Audit Logging & Compliance]
+
+```
+## 🛠️ Live Demonstration Proofs
+```
 ## 🛠️ Live Demonstration Proofs
 
 ### 1. Enforcing Data Integrity (Foreign Key Constraints)
